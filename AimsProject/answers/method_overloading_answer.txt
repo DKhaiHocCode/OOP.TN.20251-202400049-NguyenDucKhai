@@ -1,0 +1,4 @@
+1. Chuyện gì xảy ra khi them phương thức này?
+- Gây lỗi do có 2 phương thức addDVD thông qua mảng vì bản chất DigitalVideoDisc ... discs là mảng de chứa các đối số truyền vào 
+2. Bạn lựa chọn phương n nào de giải quyết?
+- Chọn phương thức sử dung Varargs do tính linh hoạt vì truyền vào số lượng tuỳ ý mà không cần tạo mảng

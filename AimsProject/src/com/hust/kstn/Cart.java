@@ -41,6 +41,41 @@ public class Cart {
         return totalCost;
     }
 
+    public void addDVD(DigitalVideoDisc disc1, DigitalVideoDisc disc2) {
+        if (qtyOrdered < 20){
+            itemsInCart[qtyOrdered++] = disc1;
+            System.out.println("The disc \"" + disc1.getTitle() + "\" has been added.");
+        } else{
+            System.out.println("The cart is full. Cannot add the disc: " + disc1.getTitle());
+        }
+
+        if (qtyOrdered < 20){
+            itemsInCart[qtyOrdered++] = disc2;
+            System.out.println("The disc \"" + disc2.getTitle() + "\" has been added.");
+        } else{
+            System.out.println("The cart is full. Cannot add the disc: " + disc2.getTitle());
+        }
+    }
+
+    public void addDVD(DigitalVideoDisc... discs) {
+        if (discs == null) {
+            System.out.println("Cannot add null discs array.");
+            return;
+        }
+
+        for (DigitalVideoDisc disc : discs) {
+            if (qtyOrdered < 20) {
+                if (disc != null) {
+                    itemsInCart[qtyOrdered++] = disc;
+                    System.out.println("The disc \"" + disc.getTitle() + "\" has been added.");
+                }
+            } else {
+                System.out.println("The cart is full. Cannot add disc: " + disc.getTitle());
+                // Dừng vòng lặp vì giỏ hàng đã đầy
+                break; 
+            }
+        }
+    }
     public void print(){
         System.out.println("=== Total item in cart: " + qtyOrdered + " ===");
         System.out.println("=== All item is cart ===");
@@ -50,4 +85,6 @@ public class Cart {
             }
         }
     }
+
+    
 }
