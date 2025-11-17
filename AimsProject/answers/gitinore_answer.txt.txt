@@ -1,0 +1,15 @@
+1.-Tại sao những đường dẫn nên được thêm vào gitignore?
++) .setting: là setting của mình( vd cài đặt về compiler, format code,...) nên không ảnh hưởng và cũng không cần thiết cho chương trình nên cần bị ignore
++) .classpath: lưu thông tin về đường dẫn thư viện, JDK version,... cho Eclipse. Mỗi máy khác nhau nên commit làm lỗi máy người khác( cho vào gitignore)
++) .project: lưu tên dự án, loại dự án. Không cần thiết với mã nguồn nên không cần 
++) bin: là file tạm thời nên không cần lưu lên git  
+- Nếu không thêm vào thì sao?
++) Dễ gây lỗi do .project, .classpath hay .settings chứa cài đặt cục bộ, cài đặt này thường khác nhau giữa lập trình viên nên khi thành viên khác trong nhóm pull về thì gây xung đột
++) Khó quản lý thay đổi
++) Tốn dung lượng không cần thiết
+2. Nếu sử dụng những công cụ khác để lập trình Java( như Intelij IDEA hoặc VScode), những đường dẫn nào sẽ được thêm vào .gitignore?
++) VSCode: .vscode/, bin/, target/
++) Intellij IDEA: .idea/, *.iml, *.iws, *.ipr, out/ , target/
+3. Trong trường hợp bạn đã lỡ commit các file tạm lên Git, nhưng sau đó bạn đã thêm chúng vào .gitignore và muốn git ngừng theo dõi hcungs mà không xóa khỏi máy, bạn sẽ cần thực hiện những thao tác nào?
++) Thêm vào .gitignore các file đấy
++) Dùng lệnh git rm --cached để xóa tệp khỏi theo dõi của git 
