@@ -1,2 +1,5 @@
 1. Ý nghĩa của từ khoá super trong ví dụ cho mã nguồn của lớp Book?
 - Gọi phương thức khởi tao của lớp Media và truyền tham số của lớp con lên lớp chaể lớp cha khởi tạo các thuộc tính chung này
+2. Tại sao java chỉ hỗ trợ đơn kế thừa?
+- Giảm do phức tạp
+- Tránh vấn de 2 lớp cha cùng kế thừa từ 1 lớp ng và cùng ghi de 1 Phương thức của con, lớp con này sẽ không biết dung Phuong thức nào của 1 trong 2 cha.
