@@ -1,0 +1,2 @@
+1. Ý nghĩa của từ khoá super trong ví dụ cho mã nguồn của lớp Book?
+- Gọi phương thức khởi tao của lớp Media và truyền tham số của lớp con lên lớp chaể lớp cha khởi tạo các thuộc tính chung này
