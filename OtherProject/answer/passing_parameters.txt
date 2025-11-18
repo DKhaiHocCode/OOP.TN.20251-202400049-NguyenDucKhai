@@ -1,0 +1,21 @@
+1. Tại sao sau khi chạy phương thức swap(s1,s2) thì tên của hai học sinh vẫn không
+thay đổi? 
+- giá trị truyền vào là bản sao dia chỉ tham chiếu đến s1,s2. Khi swap, nó hoán  2 biến cục bộ tức là 2 bản sao nên không hưởng den gốc tức doi tượng gốc
+2.Từ đó, Java là ngôn ngữ truyền tham trị hay truyền tham chiếu?
+- truyền tham trị
+3.Bạn làm thế nào để phương thức swap hoạt động (thật sự tráo đổi thông tin của hai
+đối tượng được truyền vào)?
+- Đổi nội dung bên trong của doi tượng trên bùng nhớ Heap
+4. vẽ
+STACK                                   HEAP
+-------------------------               -----------------------------------
+Swap Frame:
+  st1: 0x100 -------------------------> [Student Object A]
+                                            name: "Tran Van B" (Đã bị sửa trực tiếp!)
+  st2: 0x200 -------------------------> [Student Object B]
+                                            name: "Nguyen Van A" (Đã bị sửa trực tiếp!)
+
+Main Frame:
+  s1: 0x100 --------------------------> [Student Object A] (Vẫn trỏ vào đây, nhưng ruột đã đổi)
+  s2: 0x200 --------------------------> [Student Object B] (Vẫn trỏ vào đây, nhưng ruột đã đổi)
+
