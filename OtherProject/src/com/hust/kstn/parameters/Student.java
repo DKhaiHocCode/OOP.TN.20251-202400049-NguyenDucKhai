@@ -1,5 +1,3 @@
-package OtherProject.com.hust.kstn.parameters;
-
 public class Student {
     private int studentId;
     private String name;
