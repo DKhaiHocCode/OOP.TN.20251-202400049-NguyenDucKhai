@@ -1,4 +1,4 @@
-package com.hust.kstn;
+package com.hust.kstn.models;
 
 public class DigitalVideoDisc {
     private String title;
@@ -45,6 +45,10 @@ public class DigitalVideoDisc {
         this.length = length;
         nbDigitalVideoDiscs++;
         this.id = nbDigitalVideoDiscs;
+    }
+    @Override
+    public String toString() {
+    return "DVD [" + this.id + "]" + " - [" + this.title + "]" + " - [" + this.category + "]" + " - [" + this.director + "]" + " - [" + this.length + "]" + " - [" + this.cost + "]";
     }
 
 }

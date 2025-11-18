@@ -1,4 +1,4 @@
-package com.hust.kstn;
+package com.hust.kstn.models;
 
 public class Cart {
     private static final int MAX_NUMBER_ORDERED = 100;
@@ -57,6 +57,7 @@ public class Cart {
         }
     }
 
+
     public void addDVD(DigitalVideoDisc... discs) {
         if (discs == null) {
             System.out.println("Cannot add null discs array.");
@@ -77,14 +78,20 @@ public class Cart {
         }
     }
     public void print(){
-        System.out.println("=== Total item in cart: " + qtyOrdered + " ===");
-        System.out.println("=== All item is cart ===");
-        for(DigitalVideoDisc item: itemsInCart){
-            if(item != null){
-                System.out.println("[Title]: " + item.getTitle() + ", " + "[Cost]: "+ item.getCost());
-            }
-        }
+        System.out.println("== THE CURRENT CART ====");
+    if (qtyOrdered == 0){
+        System.out.println("The cart is empty.");
+        System.out.println("========================");
+        return;
     }
-
-    
+    System.out.println("Total items: " + qtyOrdered);
+    double subtotal = 0.0;
+    for (int i = 0; i < qtyOrdered; i++){
+        DigitalVideoDisc item = itemsInCart[i];
+        System.out.println((i + 1) + ". " + item.toString());
+        subtotal += item.getCost();
+    }
+    System.out.printf("Subtotal: %.2f $\n", subtotal);
+    System.out.println("========================");
+    }
 }
